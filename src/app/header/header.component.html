@@ -5,30 +5,39 @@
           <div class="col-lg-6 col-md-6">
             <div class="header__top__left">
               <ul>
-                <li><i class="fa fa-envelope"></i> <a href="#" class="__cf_email__" data-cfemail="0d65686161624d6e6261627f61646f236e6260">hello@ogani.com</a></li>
-                <li>Free Shipping for all Order of $99</li>
+                <li
+                  *ngFor="let headerTop of firstInfo"
+                  >
+                  <a href="#" *ngIf="headerTop.type == 'link'" class="__cf_email__" href="{{headerTop.text}}">{{headerTop.text}}</a>
+
+                  <span *ngIf="headerTop.type == 'text'">{{headerTop.text}}</span>
+                  
+                  </li>
+                    
               </ul>
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
             <div class="header__top__right">
               <div class="header__top__right__social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+
+                <a href="{{socialLink.link}}" *ngFor="let socialLink of socialLinks">
+                  <i class="fa {{socialLink.class}}"></i>
+                </a>
               </div>
               <div class="header__top__right__language">
                 <img src="assets/img/xlanguage.png.pagespeed.ic.x-r7SQqGJF.jpg" alt="">
                 <div>English</div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
-                  <li><a href="#">Spanis</a></li>
-                  <li><a href="#">English</a></li>
+                  <li *ngFor="let language of languages">
+                    <a href="{{language.link}}">{{language.text}}</a>
+                  </li>
                 </ul>
               </div>
               <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a *ngFor="let authLink of authLinks"
+                  href="{{authLink.link}}"><i class="fa {{authLink.class}}"></i> {{authLink.text}}</a>
               </div>
             </div>
           </div>
@@ -39,24 +48,17 @@
       <div class="row">
         <div class="col-lg-3">
           <div class="header__logo">
-            <a href="index-2.html"><img src="assets/img/xlogo.png.pagespeed.ic.ap5icp--OT.png" alt=""></a>
+            <a href="index-2.html"><img src="{{logo}}" alt=""></a>
           </div>
         </div>
         <div class="col-lg-6">
           <nav class="header__menu">
             <ul>
-              <li class="active"><a href="index-2.html">Home</a></li>
-              <li><a href="shop-grid.html">Shop</a></li>
-              <li><a href="#">Pages</a>
-                <ul class="header__menu__dropdown">
-                  <li><a href="shop-details.html">Shop Details</a></li>
-                  <li><a href="shoping-cart.html">Shoping Cart</a></li>
-                  <li><a href="checkout.html">Check Out</a></li>
-                  <li><a href="blog-details.html">Blog Details</a></li>
-                </ul>
+              <li *ngFor="let headerLink of headerMenu">
+                <a href="{{headerLink.link}}">
+                    {{headerLink.text}}
+                </a>
               </li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -66,7 +68,7 @@
               <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
               <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
+            <div class="header__cart__price">item: <span>{{cart}}</span></div>
           </div>
         </div>
       </div>
