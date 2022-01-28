@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FeaturedComponent implements OnInit {
 
   constructor() { }
+  path = "assets/img/featured/feature-1.jpg";
 
   ngOnInit(): void {
   }

@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class BannerComponent implements OnInit {
 
   constructor() { }
+  
+      pathLeft = "assets/img/banner/xbanner-1.jpg.pagespeed.ic.-NRyTdVwji.jpg";
+      pathRight = "assets/img/banner/banner-2.jpg";
+   
 
   ngOnInit(): void {
   }
