@@ -8,7 +8,26 @@ import { Component, OnInit } from '@angular/core';
 export class CategoriesComponent implements OnInit {
 
   constructor() { }
+  categories = [
+    {
+    link : "#",
+    name :"Fresh Fruit"
+  },
+  {
+    link : "#",
+    name :"Dried Fruit"
+  },
+  {
+    link : "#",
+    name :"Vegetables"
 
+  },
+  {
+    link : "#",
+    name :"drink fruits"
+
+  }
+  ]
   ngOnInit(): void {
   }
 
