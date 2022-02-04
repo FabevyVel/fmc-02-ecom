@@ -1,51 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { DataProviderService } from '../data-provider.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  providers: [DataProviderService]
 })
 export class HeaderComponent implements OnInit {
 
-  firstInfo = [
-    {
-      type: "link",
-      text: "hello@fabevy.com"
-    },
-    {
-      type: "text",
-      text: "Free Shipping for all Order of $99"
-    }
-  ];
+  firstInfo;
 
-  socialLinks = [
-    {
-      class: "fa-facebook",
-      link: "#"
-    },
-    {
-      class: "fa-twitter",
-      link: "#"
-    },
-    {
-      class: "fa-linkedin",
-      link: "#"
-    },
-    {
-      class: "fa-pinterest-p",
-      link: "#"
-    },
-  ];
-  languages = [
-    {
-      text: "Spanish",
-      link: "#"
-    },
-    {
-      text: "English",
-      link: "#"
-    }
-  ];
+  socialLinks;
+
+  languages;
+
   authLinks = [
     {
       text: "Login",
@@ -75,9 +44,27 @@ export class HeaderComponent implements OnInit {
   ];
   cart: number = 250;
 
-  constructor() { }
+  constructor(private dataProviderService: DataProviderService) {
+
+
+    
+  }
 
   ngOnInit(): void {
+
+    let socialLink = {
+      class: "fa-twitter",
+      link: "#"
+    }
+
+   // this.dataProviderService.postSocialLink(socialLink);
+
+    this.firstInfo = this.dataProviderService.getFirstInfo();
+    this.dataProviderService.getSocialLinks().subscribe(res => {
+      this.socialLinks = res;
+      console.log(this.socialLinks);
+    });
+    this.languages = this.dataProviderService.getLanguages();
   }
 
 }
