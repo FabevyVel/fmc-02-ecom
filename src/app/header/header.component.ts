@@ -26,19 +26,19 @@ export class HeaderComponent implements OnInit {
   headerMenu = [
     {
       text: "Home",
-      link: "index-2.html",
+      link: "/",
       isActive: true
     }, {
       text: "Shop",
-      link: "shop-grid.html",
+      link: "/shop",
       isActive: false
     }, {
       text: "Blog",
-      link: "blog.html",
+      link: "/blog",
       isActive: false
     }, {
       text: "Contact",
-      link: "contact.html",
+      link: "/contact",
       isActive: false
     }
   ];

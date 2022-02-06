@@ -54,8 +54,11 @@
         <div class="col-lg-6">
           <nav class="header__menu">
             <ul>
-              <li *ngFor="let headerLink of headerMenu">
-                <a href="{{headerLink.link}}">
+              <li 
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+                *ngFor="let headerLink of headerMenu">
+                <a routerLink="{{headerLink.link}}">
                     {{headerLink.text}}
                 </a>
               </li>

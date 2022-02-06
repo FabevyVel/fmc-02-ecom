@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   departments = [
     {
       name: 'Fresh Meat',
@@ -67,6 +68,11 @@ export class HeroComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  handleShopNavigation(){
+    console.log('Hello');
+    this.router.navigate(['/shop']);
   }
 
 }
