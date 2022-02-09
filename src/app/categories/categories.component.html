@@ -1,26 +1,11 @@
 <section class="categories">
-    <div class="container">
-      <div class="row">
-          <div class="col-lg-3">
-            <div class="categories__item set-bg" style="background-image: url(assets/img/categories/cat-1.jpg)">
-              <h5><a href="#">Fresh Fruit</a></h5>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="categories__item set-bg" style="background-image: url(assets/img/categories/cat-2.jpg)">
-              <h5><a href="#">Dried Fruit</a></h5>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="categories__item set-bg" style="background-image: url(assets/img/categories/cat-3.jpg)">
-              <h5><a href="#">Vegetables</a></h5>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="categories__item set-bg" style="background-image: url(assets/img/categories/cat-4.jpg)">
-              <h5><a href="#">drink fruits</a></h5>
-            </div>
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3" *ngFor="let catLink of categories">
+        <div class="categories__item set-bg" style="background-image: url({{catLink.path}})">
+          <h5><a href="{{catLink.link}}">{{catLink.name}}</a></h5>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

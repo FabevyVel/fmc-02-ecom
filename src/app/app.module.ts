@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import{HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
@@ -10,6 +10,8 @@ import { BannerComponent } from './banner/banner.component';
 import { LatestProductComponent } from './latest-product/latest-product.component';
 import { FromBlogComponent } from './from-blog/from-blog.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,13 @@ import { FooterComponent } from './footer/footer.component';
     BannerComponent,
     LatestProductComponent,
     FromBlogComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    BreadcrumbComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
